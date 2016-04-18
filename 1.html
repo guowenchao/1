@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHtml.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+ 	function tick(){
+ 		var today = new Date(); //新建一个Date对象
+ 		var year = today.getFullYear();//查询年份
+ 		var month = today.getMonth()+1;//查询月份
+ 		var date = today.getDate();//查询当月日期
+ 		var hour = today.getHours();  //得到小时 
+ 		var minute = today.getMinutes(); //得到分钟
+ 		var second = today.getSeconds(); //得到秒钟
+ 		function initArray(){
+			this.length=initArray.arguments.length;
+			for(var i=0;i<this.length;i++)
+				this[i+1]=initArray.arguments[i];
+		}
+		var d=new initArray("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+ 		var day=today.getDay()+1;//得到星期
+ 		if(month<10)month="0"+month;
+ 		if(date<10)date="0"+date;
+ 		if(hour<10)date="0"+hour;
+ 		if(minute<10)minute="0"+minute;
+ 		if(second<10)second="0"+second;
+ 		var time= year+"-"+month+"-"+date+"("+d[day]+")"+" "+hour+":"+minute+":"+second;
+		Clock.innerHTML = time;
+		window.setTimeout("tick();", 1000);
+	}
+	</script>
+	<style> 
+		.clock{text-align:center} 
+		.clock{font-family:"黑体";font-size:36px;}
+		.clock{background-color:#BFBFBF}
+	</style> 
+  </head>
+  <body>
+  <div class="clock">
+    	郭文超 22920132203766 <br>
+    	<span id=Clock></span>
+  </div>
+  <body onload="tick()">
+  </body>
+</html>
+
